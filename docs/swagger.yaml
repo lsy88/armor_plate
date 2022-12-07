@@ -1,0 +1,42 @@
+info:
+  contact: {}
+paths:
+  /user/register:
+    post:
+      parameters:
+      - description: Bearer 用户令牌
+        in: header
+        name: Authorization
+        type: string
+      - description: 确认密码
+        in: query
+        name: confirm_password
+        required: true
+        type: string
+      - in: query
+        name: email
+        type: string
+      - in: query
+        name: employee_name
+        required: true
+        type: string
+      - in: query
+        name: password
+        required: true
+        type: string
+      - in: query
+        name: phone_number
+        type: integer
+      - in: query
+        name: role
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","msg":"","data":""}'
+          schema:
+            type: string
+      summary: 用户注册
+      tags:
+      - 用户业务接口
+swagger: "2.0"
